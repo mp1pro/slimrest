@@ -3,15 +3,19 @@
 //this automatically includes slim via composer
 require 'vendor/autoload.php';
 
+//includes functions.php that instantiates PDO SQL like in CS50 PSET7
+require_once("includes/functions.php");
+
 // instantiate new slim object
 $app = new \Slim\Slim();
 
-// get route in first parameters and 2nd param is constructors
+// get route in first parameters and 2nd param is constructors (functions)
 /*$app->get('/ts', function () {
     echo "Hello";
 })*/;
 
-$app->get('/voters', 'getVoters');
+
+$app->get('/voters', 'getVoters');// to test voter just type http://localhost/slimrest/rest/voters in URL
 $app->get('/voter/:id',  'getVoter');
 $app->get('/voter/search/:query', 'findByName');
 $app->post('/voter', 'addVoter');
@@ -23,6 +27,7 @@ $app->run();
 
 // write the function for each end points now
 
+
 function getVoters(){
     // load all voter in the table
     echo 'test voters';
@@ -30,7 +35,7 @@ function getVoters(){
 
 function getVoter($id){
     // load a specific person
-    echo 'test';
+    echo 'test';//test output
 }
 
 function findByName($query){
@@ -39,16 +44,16 @@ function findByName($query){
 }
 
 function addVoter(){
-    // Search by name
+    // add voter
 
 }
 
 function updateVoter($id){
-    // Search by name
+    // update voter based on id
 
 }
 
 function deleteVoter($id){
-    // Search by name
+    // delete voter based on id
 
 }
