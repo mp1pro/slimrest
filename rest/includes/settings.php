@@ -7,7 +7,6 @@
  */
 
 
-
 // your database's name
 define("DATABASE", "");
 // your database's password
