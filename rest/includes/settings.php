@@ -8,10 +8,10 @@
 
 
 // your database's name
-define("DATABASE", "");
+define("DATABASE", "slimrest");
 // your database's password
 define("PASSWORD", "");
 // your database's server
-define("SERVER", "");
+define("SERVER", "localhost");
 // your database's username
-define("USERNAME", "");
+define("USERNAME", "root");

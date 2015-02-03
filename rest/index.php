@@ -30,7 +30,18 @@ $app->run();
 
 function getVoters(){
     // load all voter in the table
-    echo 'test voters';
+    //echo 'test voters';
+    $data = query('SELECT * FROM wp_users WHERE ID = 1');
+    $rows = array();
+    if (count($data) <1)
+    {
+        echo "No recorded transactions for this user exist.";
+    }
+    else {
+        $rows[] = $data;
+        echo json_encode($rows);
+    }
+
 }
 
 function getVoter($id){
