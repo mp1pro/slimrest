@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>QUnit basic example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link   rel="stylesheet" href="style.css" type="text/css">
+    <script type='text/javascript' src='http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js'></script>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!--     <select data-bind="options: availableCountries, selectedOptions: chosenCountries" size="5" multiple="true"></select> -->
+</head>
+<body>
+<header><h1>GOTV</h1></header>
+<br>
+<form class="form-horizontal  col-md-2 col-md-offset-5">
+    <div class="form-group">
+
+        <label for="ward" class="control-label col-md-7">Select Precinct </label>
+
+        <div class="col-md-5">
+            <select class="form-control " id="ward">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="form-group">
+
+        <label for="turf" class="control-label col-md-7">Select Turf</label>
+
+        <div class="col-md-5">
+            <select class="form-control " id="turf" data-bind="options: optionTurf">
+
+
+            </select>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-info add-btn">
+            Render Results
+        </button>
+    </div>
+</form>
+
+<!-- This is a *view* - HTML markup that defines the appearance of your UI -->
+
+<p>First name: <strong data-bind="text: firstName"></strong></p>
+<p>Last name: <strong data-bind="text: lastName"></strong></p>
+<!--
+<select class="form-control" data-bind="options: turf, selectedOptions: chosenTurf"></select>
+<select class="form-control" data-bind="options: precinct, selectedOptions: chosenPrecinct"></select>-->
+<!--<h1 class="btn" id="getlist">getresults</h1>
+<table>
+<thead><tr>
+        <th>GOTV </th><th>Name</th><th>Phone </th><th>knock1Result</th><th>callAttempt</th><th>callResult</th>
+       </tr>
+<tbody data-bind="foreach: viewModel.voters">
+     <tr>
+        <td data-bind="text: GOTVID"></td>
+        <td data-bind="text: fullName"></td>
+        <td data-bind="text: phone"></td>
+        <td data-bind="text: knock1Result"></td>
+        <td data-bind="text: callAttempt"></td>
+        <td data-bind="text: callResult"></td>
+    </tr>
+</tbody>
+</table>-->
+
+
+<script type="text/javascript">
+
+
+    /*var viewModel = {
+     // These are the initial options
+     optionTurf: ko.observableArray([1,2,3,4,5])
+     };*/
+    function AppViewModel() {
+        this.firstName = "";
+        this.lastName = "Bertington";
+    }
+
+    // Activates knockout.js
+    ko.applyBindings(new AppViewModel());
+
+
+
+    /*var viewModel = {
+     turf: ko.observableArray([1,2,3,4,5]),
+     chosenTurf: ko.observableArray([1]),
+     precinct: ko.observableArray([1,2,3,4,5,6]),
+     chosenPrecinct: ko.observableArray([1]),
+     voters: ko.applyBindings()
+     };
+     ko.applyBindings(viewModel);
+     $("#getlist").click(function(){
+     console.log("send request");
+     $.getJSON("http://ward7.xcmc.org/voterInfo.php",{
+     turf:viewModel.chosenTurf,
+     precinct:viewModel.chosenPrecinct
+     },function(results){
+     viewModel.voters(results)
+     });
+     })*/
+</script>
+</body>
+</html>
