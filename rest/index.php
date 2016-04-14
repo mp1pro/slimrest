@@ -13,8 +13,6 @@ $app = new \Slim\Slim();
 /*$app->get('/ts', function () {
     echo "Hello";
 })*/;
-
-
 $app->get('/voters', 'getVoters');// to test voter just type http://localhost/slimrest/rest/voters in URL
 $app->get('/voter/:id',  'getVoter');
 $app->get('/voter/search/:query', 'findByName');
@@ -26,8 +24,6 @@ $app->delete('/voter/:id',   'deleteVoter');
 $app->run();
 
 // write the function for each end points now
-
-
 function getVoters(){
     // load all voter in the table
     //echo 'test voters';
@@ -43,7 +39,6 @@ function getVoters(){
     }
 
 }
-
 function getVoter($id){
     // load a specific person
     echo 'test';//test output
@@ -53,17 +48,14 @@ function findByName($query){
     // Search by name
 
 }
-
 function addVoter(){
     // add voter
 
 }
-
 function updateVoter($id){
     // update voter based on id
 
 }
-
 function deleteVoter($id){
     // delete voter based on id
 
